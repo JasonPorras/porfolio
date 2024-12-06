@@ -2,12 +2,16 @@
   <header>
     <div class="header--centered container">
       <div class="header__logo">
-        <img
-          :src="
-            isLightTheme ? '../src/assets/img/logo-dark.svg' : '../src/assets/img/logo-light.svg'
-          "
-          alt="Logo"
-        />
+        <a href="/">
+          <img
+            :src="
+              isLightTheme
+                ? '@/../src/assets/img/logo-dark.svg'
+                : '@/../src/assets/img/logo-light.svg'
+            "
+            alt="Logo"
+          />
+        </a>
       </div>
       <nav class="header__nav--desktop">
         <button class="header__toggle" @click="toggleMenu">☰</button>
@@ -70,26 +74,26 @@
           }}</a>
         </li>
         <li class="header__item">
-          <button class="language-toggle" @click="toggleLanguage">
-            <img
-              v-if="$i18n.locale === 'es'"
-              src="../../src/assets/img/flags/united-states.png"
-              alt="English"
-              class="language-toggle__flag"
-            />
-            <img
-              v-else
-              src="../../src/assets/img/flags/flag.png"
-              alt="Español"
-              class="language-toggle__flag"
-            />
-          </button>
-        </li>
-        <li class="header__item">
-          <!-- Botón para cambiar el tema -->
-          <button class="theme-toggle" @click="toggleTheme">
-            <i :class="isLightTheme ? 'fas fa-moon' : 'fas fa-sun'"></i>
-          </button>
+          <div>
+            <button class="language-toggle" @click="toggleLanguage">
+              <img
+                v-if="$i18n.locale === 'es'"
+                src="../../src/assets/img/flags/united-states.png"
+                alt="English"
+                class="language-toggle__flag"
+              />
+              <img
+                v-else
+                src="../../src/assets/img/flags/flag.png"
+                alt="Español"
+                class="language-toggle__flag"
+              />
+            </button>
+            <!-- Botón para cambiar el tema -->
+            <button class="theme-toggle" @click="toggleTheme">
+              <i :class="isLightTheme ? 'fas fa-moon' : 'fas fa-sun'"></i>
+            </button>
+          </div>
         </li>
       </ul>
     </nav>
