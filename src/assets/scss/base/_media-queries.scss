@@ -1,0 +1,25 @@
+// Breakpoints
+$breakpoint-tablet: 768px;         // Tabletas
+$breakpoint-desktop: 992px;        // Escritorios
+$breakpoint-large-desktop: 1024px; // Escritorios grandes
+
+// Mixin para tabletas
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+// Mixin para escritorios
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+// Mixin para escritorios grandes
+@mixin large-desktop {
+  @media (min-width: $breakpoint-large-desktop) {
+    @content;
+  }
+}

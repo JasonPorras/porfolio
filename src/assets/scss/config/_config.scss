@@ -1,0 +1,9 @@
+.light-theme {
+    @include light-theme;
+    transition: background-color 0.3s ease, color 0.3s ease; // Agregar transición
+  }
+  
+  .dark-theme {
+    @include dark-theme;
+    transition: background-color 0.3s ease, color 0.3s ease; // Agregar transición
+  }

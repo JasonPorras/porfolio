@@ -1,0 +1,13 @@
+@mixin light-theme {
+    --bg-color: #{$light-bg-color};
+    --text-color: #{$light-text-color};
+    --color: #{$dark-color};
+    --primary-color: #{$primary-light-color};
+  }
+  
+  @mixin dark-theme {
+    --bg-color: #{$dark-bg-color};
+    --text-color: #{$dark-text-color};
+    --color: #{$light-color};
+    --primary-color: #{$primary-dark-color};
+  }

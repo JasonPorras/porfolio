@@ -1,0 +1,28 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: transparent;
+  /* Fondo negro como especificaste */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  animation: headerFadeIn 1s ease-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin: 0px;
+}

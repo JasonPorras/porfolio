@@ -1,0 +1,52 @@
+.footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px 0;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column; // Coloca elementos en columna en móviles
+
+        &__list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column; // Coloca elementos en columna en móviles
+
+            &__item {
+                margin: 5px 0; // Margen vertical para móviles
+            }
+
+            &__link {
+                color: #fff;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .footer__content {
+        flex-direction: row; // Cambia a fila en pantallas más grandes
+
+        &__list {
+            flex-direction: row; // Coloca elementos en fila en pantallas más grandes
+
+            &__item {
+                margin: 0 20px; // Margen horizontal para pantallas grandes
+            }
+        }
+    }
+}
+
+@include desktop {
+    .footer {
+        padding: 30px 0; // Más espaciado para escritorios
+    }
+}

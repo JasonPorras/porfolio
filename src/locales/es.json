@@ -1,0 +1,15 @@
+{
+    "header": {
+        "portfolio": "Portafolio",
+        "blog": "Blog",
+        "hireMe": "Contrátame"
+    },
+    "footer": {
+        "terms": "Términos y Condiciones",
+        "privacy": "Política de Privacidad"
+    },
+    "about": {
+        "title": "Sobre Mí",
+        "description": "Soy un desarrollador apasionado..."
+    }
+}

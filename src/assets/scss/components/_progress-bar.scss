@@ -1,0 +1,42 @@
+.flow-line {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 5px;
+    background-color: var(--primary-color);
+    transition: height 0.3s ease;
+    z-index: 5;
+}
+
+.flow-line__progress {
+    display: none;
+}
+
+.confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@include tablet {
+    .flow-line__progress {
+        position: fixed;
+        display: flex;
+        left: 10px;
+        top: 10px;
+        color: var(--primary-color);
+        font-size: 0.75rem;
+        font-weight: bold;
+    }
+}
+
+@include desktop {
+    .flow-line__progress {
+        font-size: 1rem;
+        top: calc(0px + var(--progress-line-height));
+    }
+}

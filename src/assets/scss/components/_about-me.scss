@@ -1,0 +1,71 @@
+.about-me {
+    padding: 40px 20px; // Espaciado para móviles
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 1s ease, color 1s ease;
+
+    &__title {
+        font-size: 1.5em; // Tamaño de fuente móvil
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    &__description {
+        font-size: 1em; // Tamaño de fuente móvil
+        margin-bottom: 20px;
+        text-align: justify;
+
+    }
+
+    &__subtitle {
+        font-size: 1.2em; // Tamaño de fuente móvil
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    &__skills {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__skill {
+        background-color: transparent;
+        color: var(--text-color);
+        padding: 8px 12px;
+        border: 2px solid var(--primary-color);
+        margin: 5px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+}
+
+@include tablet {
+    .about-me {
+        padding: 60px 40px; // Más espaciado para tabletas
+
+        &__title {
+            font-size: 2em; // Aumenta tamaño de fuente para tabletas
+        }
+
+        &__description {
+            font-size: 1.2em; // Aumenta tamaño de fuente para tabletas
+        }
+
+        &__subtitle {
+            font-size: 1.5em; // Aumenta tamaño de fuente para tabletas
+        }
+
+        &__skill {
+            padding: 10px 15px; // Aumenta espaciado para pantallas grandes
+        }
+    }
+}
+
+@include desktop {
+    .about-me {
+        padding: 80px 60px; // Más espaciado para escritorio
+    }
+}

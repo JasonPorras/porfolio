@@ -1,0 +1,76 @@
+.portfolio {
+  padding: 40px 20px;
+  /* Espaciado para móviles */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 1s ease, color 1s ease;
+
+  &__title {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__projects {
+    display: flex;
+    flex-direction: column;
+    /* Coloca los proyectos en columna */
+    align-items: center;
+  }
+
+  &__project {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 600px;
+
+    &-title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    &-image {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    &-description {
+      font-size: 1em;
+    }
+  }
+}
+
+@include tablet {
+  .portfolio {
+    padding: 60px 40px;
+    /* Más espaciado para tabletas */
+
+    &__title {
+      font-size: 2em;
+      /* Aumenta tamaño de fuente para tabletas */
+    }
+
+    &__project {
+      &-title {
+        font-size: 1.5em;
+        /* Aumenta tamaño de fuente para títulos en tabletas */
+      }
+    }
+  }
+}
+
+@include desktop {
+  .portfolio {
+    padding: 80px 60px;
+    /* Más espaciado para escritorios */
+
+    &__project {
+      width: 80%;
+      /* Ancho para escritorios */
+    }
+  }
+}
