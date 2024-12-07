@@ -3,97 +3,42 @@
     <div class="header--centered container">
       <div class="header__logo">
         <a href="/">
-          <img
-            :src="
-              isLightTheme
-                ? '@/../src/assets/img/logo-dark.svg'
-                : '@/../src/assets/img/logo-light.svg'
-            "
-            alt="Logo"
-          />
+          <img :src="getLogo" alt="Logo principal" loading="lazy" />
         </a>
       </div>
       <nav class="header__nav--desktop">
-        <button class="header__toggle" @click="toggleMenu">☰</button>
-        <ul class="header__list" :class="{ 'header__list--open': isMenuOpen }">
-          <li class="header__item">
-            <a href="#portfolio" class="header__link" @click.prevent="scrollTo('#portfolio')">{{
-              $t('header.portfolio')
-            }}</a>
-          </li>
-          <li class="header__item">
-            <a href="#blog" class="header__link" @click.prevent="scrollTo('#blog')">{{
-              $t('header.blog')
-            }}</a>
-          </li>
-          <li class="header__item">
-            <a href="#hire" class="header__link" @click.prevent="scrollTo('#hire')">{{
-              $t('header.hireMe')
-            }}</a>
+        <ul class="header__list">
+          <li v-for="link in links" :key="link.id" class="header__item">
+            <a :href="link.href" class="header__link" @click.prevent="scrollTo(link.href)">
+              {{ $t(link.label) }}
+            </a>
           </li>
         </ul>
       </nav>
-      <!-- Botón para cambiar idioma -->
       <div class="settings">
-        <button class="language-toggle" @click="toggleLanguage">
-          <img
-            v-if="$i18n.locale === 'es'"
-            src="../../src/assets/img/flags/united-states.png"
-            alt="English"
-            class="language-toggle__flag"
-          />
-          <img
-            v-else
-            src="../../src/assets/img/flags/flag.png"
-            alt="Español"
-            class="language-toggle__flag"
-          />
+        <button class="language-toggle" @click="toggleLanguage" aria-label="Cambiar idioma">
+          <img :src="languageFlag" :alt="languageAlt" class="language-toggle__flag" />
         </button>
-        <!-- Botón para cambiar el tema -->
-        <button class="theme-toggle" @click="toggleTheme">
-          <i :class="isLightTheme ? 'fas fa-moon' : 'fas fa-sun'"></i>
+        <button class="theme-toggle" @click="toggleTheme" aria-label="Cambiar tema">
+          <i :class="themeIcon"></i>
         </button>
       </div>
     </div>
     <nav class="header__nav--mobile">
-      <button class="header__toggle" @click="toggleMenu">☰</button>
+      <button class="header__toggle" @click="toggleMenu" aria-label="Abrir menú">☰</button>
       <ul class="header__list" :class="{ 'header__list--open': isMenuOpen }">
-        <li class="header__item">
-          <a href="#portfolio" class="header__link" @click.prevent="scrollTo('#portfolio')">{{
-            $t('header.portfolio')
-          }}</a>
+        <li v-for="link in links" :key="link.id" class="header__item">
+          <a :href="link.href" class="header__link" @click.prevent="scrollTo(link.href)">
+            {{ $t(link.label) }}
+          </a>
         </li>
-        <li class="header__item">
-          <a href="#blog" class="header__link" @click.prevent="scrollTo('#blog')">{{
-            $t('header.blog')
-          }}</a>
-        </li>
-        <li class="header__item">
-          <a href="#hire" class="header__link" @click.prevent="scrollTo('#hire')">{{
-            $t('header.hireMe')
-          }}</a>
-        </li>
-        <li class="header__item">
-          <div>
-            <button class="language-toggle" @click="toggleLanguage">
-              <img
-                v-if="$i18n.locale === 'es'"
-                src="../../src/assets/img/flags/united-states.png"
-                alt="English"
-                class="language-toggle__flag"
-              />
-              <img
-                v-else
-                src="../../src/assets/img/flags/flag.png"
-                alt="Español"
-                class="language-toggle__flag"
-              />
-            </button>
-            <!-- Botón para cambiar el tema -->
-            <button class="theme-toggle" @click="toggleTheme">
-              <i :class="isLightTheme ? 'fas fa-moon' : 'fas fa-sun'"></i>
-            </button>
-          </div>
+        <li class="header__item settings--mobile">
+          <button class="language-toggle" @click="toggleLanguage" aria-label="Cambiar idioma">
+            <img :src="languageFlag" :alt="languageAlt" class="language-toggle__flag" />
+          </button>
+          <button class="theme-toggle" @click="toggleTheme" aria-label="Cambiar tema">
+            <i :class="themeIcon"></i>
+          </button>
         </li>
       </ul>
     </nav>
@@ -101,14 +46,35 @@
 </template>
 
 <script>
-import { scrollTo } from 'vue-scrollto'
-
 export default {
   name: 'HeaderComponent',
   props: ['isLightTheme'],
   data() {
     return {
-      isMenuOpen: false
+      isMenuOpen: false,
+      links: [
+        { id: 1, label: 'header.portfolio', href: '#portfolio' },
+        { id: 2, label: 'header.blog', href: '#blog' },
+        { id: 3, label: 'header.hireMe', href: '#hire' }
+      ]
+    }
+  },
+  computed: {
+    getLogo() {
+      return this.isLightTheme
+        ? new URL('@/assets/img/logo-dark.svg', import.meta.url).href
+        : new URL('@/assets/img/logo-light.svg', import.meta.url).href
+    },
+    languageFlag() {
+      return this.$i18n.locale === 'es'
+        ? new URL('@/assets/img/flags/united-states.png', import.meta.url).href
+        : new URL('@/assets/img/flags/flag.png', import.meta.url).href
+    },
+    languageAlt() {
+      return this.$i18n.locale === 'es' ? 'English' : 'Español'
+    },
+    themeIcon() {
+      return this.isLightTheme ? 'fas fa-moon' : 'fas fa-sun'
     }
   },
   methods: {
@@ -116,32 +82,16 @@ export default {
       this.isMenuOpen = !this.isMenuOpen
     },
     toggleTheme() {
-      this.$emit('theme-changed') // Emitir el cambio de tema al componente padre
+      this.$emit('theme-changed')
     },
     scrollTo(selector) {
-      scrollTo(selector, {
-        duration: 800, // Duración del desplazamiento en milisegundos
-        offset: -100 // Desplazamiento adicional, puedes ajustarlo según sea necesario
-      })
+      this.$scrollTo(selector, { duration: 800, offset: -100 })
     },
-    // Método para cambiar el idioma
     toggleLanguage() {
       const newLocale = this.$i18n.locale === 'es' ? 'en' : 'es'
-      localStorage.setItem('preferredLocale', newLocale) // Guardar el idioma en localStorage
-      window.location.reload() // Recargar la página
-    },
-    handleResize() {
-      // Si el ancho de la ventana es mayor a 768px, cierra el menú
-      if (window.innerWidth > 768) {
-        this.isMenuOpen = false
-      }
+      this.$i18n.locale = newLocale
+      localStorage.setItem('preferredLocale', newLocale)
     }
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleResize)
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize)
   }
 }
 </script>
