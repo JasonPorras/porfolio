@@ -76,7 +76,7 @@ header {
     width: 44px;
     background-color: transparent;
     font-weight: 800;
-    border: 2px solid black;
+    border: 2px solid var(--primary-color);
     padding: 0px;
 
     &:focus-visible {
@@ -125,23 +125,24 @@ header {
       transform: translatex(225px);
       z-index: 1;
       transition: transform 1s ease;
+    }
 
-      li {
-        padding-left: 20px;
-      }
+    li {
+      padding-left: 20px;
+    }
 
-      & li:last-child {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        padding-left: 0px;
-      }
+    & li:last-child {
+      display: flex;
+      gap: 10px;
+      padding-left: 20px;
+      height: calc(100% - 191px);
+      align-items: end;
     }
   }
 
   // Elemento de la lista
   .header__item {
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 0px;
   }
 
