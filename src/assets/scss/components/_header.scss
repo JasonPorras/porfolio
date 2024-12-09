@@ -1,8 +1,8 @@
 header {
   background-color: var(--bg-color);
   color: var(--text-color);
-
   transition: background-color 1s ease, color 1s ease;
+  position: relative;
 
   // Animación de entrada del header
   @keyframes headerFadeIn {
@@ -23,180 +23,122 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    position: relative;
 
     // Logo con efecto flotante
-    .header__logo img {
-      width: 60px;
-      color: red !important;
-
+    .header__logo {
       a {
         font-size: 1.5rem;
         color: var(--primary-color);
         text-decoration: none;
         font-weight: 500;
 
-        span {
-          color: var(--text-color);
+        img {
+          width: 60px;
+          color: red !important;
         }
       }
     }
 
-    .settings {
-      display: none;
+    // Botón de menú en dispositivos móviles
+    .header__toggle {
+      display: block; // Mostrar en móviles
+      background-color: transparent;
+      color: var(--color);
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+
+
+      &:focus {
+        outline: none;
+      }
     }
 
-    .header__nav--desktop {
-      display: none;
-    }
-  }
-
-  .header__nav--mobile {
-    position: relative;
-    display: flex;
-    justify-content: end;
-  }
-
-  // Botón de cambio de tema
-  .theme-toggle {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    outline: none;
-    background-color: transparent;
-    padding: 1px 8px;
-    height: fit-content;
-    font-size: 24px;
-    border-radius: 40px;
-  }
-
-  //Botón para cambiar idioma
-  .language-toggle {
-    border-radius: 100%;
-    height: 44px;
-    width: 44px;
-    background-color: transparent;
-    font-weight: 800;
-    border: 2px solid var(--primary-color);
-    padding: 0px;
-
-    &:focus-visible {
-      display: none;
-    }
-  }
-
-  .language-toggle__flag {
-    width: -webkit-fill-available;
-    height: auto;
-  }
-
-  // Botón de menú en dispositivos móviles
-  .header__toggle {
-    display: block; // Mostrar en móviles
-    background-color: transparent;
-    color: var(--color);
-    border: none;
-    position: absolute;
-    font-size: 2rem;
-    cursor: pointer;
-    bottom: 12px;
-    padding-right: 12px;
-
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  // Lista de enlaces del menú
-  .header__list {
-    list-style: none;
-    color: var(--text-color);
-    right: calc(100% - 0px);
-    background-color: var(--bg-color);
-    transition: transform 1s ease;
-    width: 226px;
-    padding: 0px;
-    position: absolute;
-    height: calc(100vh - 76.16px);
-    border-top: 4px solid var(--primary-color);
-
-    // Estilo cuando la lista está abierta
-    &.header__list--open {
-      transform: translatex(225px);
-      z-index: 1;
+    .header__nav {
+      top: 76px;
+      position: absolute;
+      width: 100%;
+      left: 0px;
+      transform: translateX(-226px);
       transition: transform 1s ease;
+
+      &--open {
+        transform: translateX(0px);
+        transition: transform 1s ease;
+        width: calc(100% - 40%);
+      }
     }
 
-    li {
-      padding-left: 20px;
-    }
+    // Lista de enlaces del menú
+    .header__list {
+      list-style: none;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: transform 1s ease;
+      width: 226px;
+      padding: 0px;
+      height: calc(100vh - 76.16px);
+      border-top: 4px solid var(--primary-color);
 
-    & li:last-child {
-      display: flex;
-      gap: 10px;
-      padding-left: 20px;
-      height: calc(100% - 191px);
-      align-items: end;
+      // Estilo cuando la lista está abierta
+      &.header__list--open {
+        transform: translatex(225px);
+        z-index: 1;
+        transition: transform 1s ease;
+      }
+
+      // Elemento de la lista
+      .header__item {
+        margin: 20px 0;
+        padding-left: 20px;
+
+        // Enlace dentro de la lista
+        .header__link {
+          color: var(--text-color);
+          font-size: 1.2rem;
+          text-decoration: none;
+        }
+      }
     }
   }
 
-  // Elemento de la lista
-  .header__item {
-    margin: 20px 0;
-    padding: 0px;
-  }
+  .settings {
 
-  // Enlace dentro de la lista
-  .header__link {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    text-decoration: none;
-  }
+    // Botón de cambio de tema
+    .theme-toggle {
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      outline: none;
+      background-color: transparent;
+      padding: 1px 8px;
+      height: fit-content;
+      font-size: 24px;
+      border-radius: 40px;
+    }
 
-  // Media queries utilizando mixins
-  @include tablet {
-    .header--centered {
-      padding: 15px;
+    //Botón para cambiar idioma
+    .language-toggle {
+      border-radius: 100%;
+      height: 44px;
+      width: 44px;
+      background-color: transparent;
+      font-weight: 800;
+      border: 2px solid var(--primary-color);
+      padding: 0px;
 
-      .header__toggle {
+      &:focus-visible {
         display: none;
       }
 
-      .header__list {
-        position: unset;
-        transform: none;
-        transition: none;
-        z-index: unset;
+      &__flag {
+        width: -webkit-fill-available;
+        height: auto;
       }
-
-      .header__list {
-        display: flex;
-
-
-        & li:nth-child(4),
-        & li:nth-child(5) {
-          display: none;
-        }
-      }
-
-      .header__item {
-        margin: 0 15px;
-        display: inline-block;
-      }
-
-      .settings {
-        display: block;
-      }
-
-      .header__nav--desktop {
-        display: flex;
-      }
-    }
-  }
-
-  @include desktop {
-    .header--centered {
-      padding: 20px; // Ajusta el padding para desktop
     }
   }
 }
+
+// Media queries utilizando mixins
+@include tablet {}
+
+@include desktop {}

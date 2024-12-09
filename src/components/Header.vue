@@ -1,20 +1,29 @@
 <template>
-  <header>
+  <header class="header">
     <div class="header--centered container">
+      <!-- Logo -->
       <div class="header__logo">
         <a href="/">
           <img :src="getLogo" alt="Logo principal" loading="lazy" />
         </a>
       </div>
-      <nav class="header__nav--desktop">
+
+      <!-- Botón de menú -->
+      <button class="header__toggle" @click="toggleMenu" aria-label="Abrir menú">☰</button>
+
+      <!-- Menú de navegación -->
+      <nav class="header__nav" :class="{ 'header__nav--open': isMenuOpen }">
         <ul class="header__list">
           <li v-for="link in links" :key="link.id" class="header__item">
-            <a :href="link.href" class="header__link" @click.prevent="scrollTo(link.href)">
+            <a :href="link.href" class="header__link">
+              <i :class="link.icon" class="header__icon"></i>
               {{ $t(link.label) }}
             </a>
           </li>
         </ul>
       </nav>
+
+      <!-- Configuración (idioma y tema) -->
       <div class="settings">
         <button class="language-toggle" @click="toggleLanguage" aria-label="Cambiar idioma">
           <img :src="languageFlag" :alt="languageAlt" class="language-toggle__flag" />
@@ -24,24 +33,6 @@
         </button>
       </div>
     </div>
-    <nav class="header__nav--mobile">
-      <button class="header__toggle" @click="toggleMenu" aria-label="Abrir menú">☰</button>
-      <ul class="header__list" :class="{ 'header__list--open': isMenuOpen }">
-        <li v-for="link in links" :key="link.id" class="header__item">
-          <a :href="link.href" class="header__link" @click.prevent="scrollTo(link.href)">
-            {{ $t(link.label) }}
-          </a>
-        </li>
-        <li class="header__item settings--mobile">
-          <button class="language-toggle" @click="toggleLanguage" aria-label="Cambiar idioma">
-            <img :src="languageFlag" :alt="languageAlt" class="language-toggle__flag" />
-          </button>
-          <button class="theme-toggle" @click="toggleTheme" aria-label="Cambiar tema">
-            <i :class="themeIcon"></i>
-          </button>
-        </li>
-      </ul>
-    </nav>
   </header>
 </template>
 
@@ -53,9 +44,9 @@ export default {
     return {
       isMenuOpen: false,
       links: [
-        { id: 1, label: 'header.portfolio', href: '#portfolio' },
-        { id: 2, label: 'header.blog', href: '#blog' },
-        { id: 3, label: 'header.hireMe', href: '#hire' }
+        { id: 1, label: 'header.portfolio', href: '#portfolio', icon: 'fas fa-briefcase' },
+        { id: 2, label: 'header.blog', href: '#blog', icon: 'fas fa-blog' },
+        { id: 3, label: 'header.hireMe', href: '#hire', icon: 'fas fa-envelope' }
       ]
     }
   },
@@ -83,9 +74,6 @@ export default {
     },
     toggleTheme() {
       this.$emit('theme-changed')
-    },
-    scrollTo(selector) {
-      this.$scrollTo(selector, { duration: 800, offset: -100 })
     },
     toggleLanguage() {
       const newLocale = this.$i18n.locale === 'es' ? 'en' : 'es'
