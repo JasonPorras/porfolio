@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Dinámica</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-hamburguesa" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="#section1"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#section2"><i class="fas fa-project-diagram"></i> Proyectos</a></li>
+                <li><a href="#section3"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="fullpage">
+        <div class="section" id="section1">
+            <div class="content">
+                <h1>Bienvenido a Mi Portafolio</h1>
+                <p>Hola, soy Jason Porras, un desarrollador web apasionado por crear experiencias digitales únicas.</p>
+                <a href="#timeline" class="btn">Ver Mi Historia</a>
+            </div>
+        </div>
+        
+        <div class="section timeline-section" id="section2">
+            <h2>Mi Trayectoria</h2>
+            <div class="timeline">
+                <div class="event hidden">
+                    <div class="event-icon">🖥️</div>
+                    <div class="event-content">
+                        <h3>2018</h3>
+                        <p>Comencé a programar mis primeras páginas web.</p>
+                    </div>
+                </div>
+        
+                <div class="event hidden">
+                    <div class="event-icon">🚀</div>
+                    <div class="event-content left-text">
+                        <h3>2021</h3>
+                        <p>Trabajé en proyectos de alto impacto en [empresa].</p>
+                    </div>
+                </div>
+        
+                <div class="event hidden">
+                    <div class="event-icon">🌍</div>
+                    <div class="event-content">
+                        <h3>2024</h3>
+                        <p>Ahora, creando experiencias únicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="section3">
+            <div class="content">
+                <h2>Proyectos</h2>
+                <div class="project-slider">
+                    <div class="project-card">
+                        <img alt="Mountain View" src="https://assets.codepen.io/221808/owl.svg" />
+                        <h2>Mountain View</h2>
+                        <p>Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                        <button class="btn">View Trips</button>
+                    </div>
+                    <div class="project-card">
+                        <img alt="To The Beach" src="https://assets.codepen.io/221808/rabbit.svg" />
+                        <h2>To The Beach</h2>
+                        <p>Plan your next beach trip with these fabulous destinations</p>
+                        <button class="btn">View Trips</button>
+                    </div>
+                    <div class="project-card">
+                        <img alt="Desert Destinations" src="https://assets.codepen.io/221808/raven.svg" />
+                        <h2>Desert Destinations</h2>
+                        <p>It's the desert you've always dreamed of</p>
+                        <button class="btn">Book Now</button>
+                    </div>
+                    <div class="project-card">
+                        <img alt="Explore The Galaxy" src="https://assets.codepen.io/221808/owl.svg" />
+                        <h2>Explore The Galaxy</h2>
+                        <p>Seriously, straight up, just blast off into outer space today</p>
+                        <button class="btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section4">
+            <div class="content">
+                <h2>Contacto</h2>
+                <form>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone">
+                    <label for="subject">Asunto:</label>
+                    <input type="text" id="subject" name="subject" required>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="navigation-dots">
+        <ul>
+            <li class="dot active" data-index="0"></li>
+            <li class="dot" data-index="1"></li>
+            <li class="dot" data-index="2"></li>
+            <li class="dot" data-index="3"></li>
+        </ul>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
