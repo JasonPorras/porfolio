@@ -88,7 +88,7 @@ const observer = new IntersectionObserver((entries) => {
 
 events.forEach(event => observer.observe(event));
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
     const fadeElements = document.querySelectorAll('.fade-in');
 
     const observer = new IntersectionObserver((entries) => {
