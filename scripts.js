@@ -87,3 +87,17 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 events.forEach(event => observer.observe(event));
+
+document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    fadeElements.forEach(element => observer.observe(element));
+});

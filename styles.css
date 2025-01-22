@@ -39,8 +39,9 @@ header {
 }
 
 .menu li a {
-    color: #f2f2f2;
+    color: #e74c3c;
     text-decoration: none;
+    font-weight: 700;
     font-size: 1rem;
     transition: color 0.3s;
 }
@@ -476,3 +477,15 @@ h2 {
     opacity: 1;
     transform: translateY(0);
 }
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
