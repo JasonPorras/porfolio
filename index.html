@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar__container container">
+            <div class="navbar__toggle" id="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="navbar__menu" id="navbar-menu">
+                <li class="navbar__menu-item">
+                    <a href="#home" class="navbar__menu-link active" data-i18n="nav-home">Inicio</a>
+                </li>
+                <li class="navbar__menu-item">
+                    <a href="#about" class="navbar__menu-link" data-i18n="nav-about">Sobre Mí</a>
+                </li>
+                <li class="navbar__menu-item">
+                    <a href="#project" class="navbar__menu-link" data-i18n="nav-project">Servicios</a>
+                </li>
+                <li class="navbar__menu-item">
+                    <a href="#contact" class="navbar__menu-link" data-i18n="nav-contact">Contacto</a>
+                </li>
+            </ul>
+
+            <div class="navbar__settings">
+                <select class="language-selector" id="language-selector">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                </select>
+
+                <button class="toggle-theme" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container d-flex justify-content-center">
+            <div class="hero__content d-flex flex-column align-items-center">
+                <h1 class="hero__title" data-i18n="hero-title">Hola soy Jason Porras</h1>
+                <hr class="divider">
+
+                <p class="hero__subtitle" data-i18n="hero-subtitle">Diseño y desarrollo experiencias digitales que hacen
+                    la vida más simple y funcional</p>
+                <div class="hero__btn-group d-flex justify-content-center">
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero-btn-2">
+                        <i class="fas fa-paper-plane me-2"></i> Contáctame
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="about-title">Sobre Mí</h2>
+            <hr class="divider">
+            <div class="about__container">
+                <div class="about__content" data-aos="fade-left">
+                    <h3 class="section-title" data-i18n="about-subtitle">Diseñador & Desarrollador Web</h3>
+
+                    <p class="about__text" data-i18n="about-description">
+                        Soy un desarrollador front-end apasionado con más de 2 años de experiencia en la creación de
+                        experiencias digitales atractivas y funcionales. Me especializo en el desarrollo web responsive
+                        con HTML, CSS, JavaScript y frameworks modernos. Mi enfoque se centra en crear interfaces de
+                        usuario intuitivas y visualmente atractivas que mejoren la experiencia del usuario y cumplan con
+                        los objetivos de negocio.
+                    </p>
+
+                    <div class="about__stats d-flex mb-4">
+                        <div class="about__stat">
+                            <div class="about__stat-value" data-counter="10">0</div>
+                            <div class="about__stat-label" data-i18n="about-stat-1">Proyectos</div>
+                        </div>
+
+                        <div class="about__stat">
+                            <div class="about__stat-value" data-counter="20">0</div>
+                            <div class="about__stat-label" data-i18n="about-stat-2">Componentes UI</div>
+                        </div>
+
+                        <div class="about__stat">
+                            <div class="about__stat-value" data-counter="2">0</div>
+                            <div class="about__stat-label" data-i18n="about-stat-3">Años de Exp.</div>
+                        </div>
+                    </div>
+                    <div class="about__btn-group d-flex justify-content-center justify-content-lg-start">
+                        <a href="#" class="btn btn-primary" data-i18n="about-btn">Descargar CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project" id="project">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="project-title">Proyectos</h2>
+            <hr class="divider">
+
+            <div class="project__container">
+                <div class="project__card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project__icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="project__title" data-i18n="project-title-1">Diseños adaptables</h3>
+                    <p class="project__description" data-i18n="project-desc-1">
+                        Creo interfaces visuales que se adaptan a cualquier dispositivo, cuidando la estética y la
+                        experiencia del usuario desde el primer contacto.
+                    </p>
+                </div>
+
+                <div class="project__card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project__icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="project__title" data-i18n="project-title-2">Experiencias atractivas</h3>
+                    <p class="project__description" data-i18n="project-desc-2">
+                        Desarrollo sitios que combinan estética con funcionalidad, logrando que cada interacción sea
+                        fluida, intuitiva y agradable para el usuario.
+                    </p>
+                </div>
+
+                <div class="project__card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project__icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="project__title" data-i18n="project-title-3">Enfoque estructurado</h3>
+                    <p class="project__description" data-i18n="project-desc-3">
+                        Organizo los proyectos con lógica visual clara y jerarquía bien definida, facilitando tanto el
+                        mantenimiento como futuras mejoras.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project__grid">
+            <div class="project__item" data-aos="fade-up" data-aos-delay="100">
+                <img src="./img/projects/img1.png" alt="project Item" class="project__item-img">
+                <div class="project__item-overlay">
+                    <span class="project__item-category" data-i18n="project-name-1">ViperLines</span>
+                    <div class="project__item-links">
+                        <a href="https://viperlines.com/" class="project__item-link" target="_blank">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <a class="project__item-link" data-bs-toggle="modal" data-bs-target="#projectModal"
+                            data-images='["img/projects/project1/img1.png", "img/projects/project1/img2.png" , "img/projects/project1/img3.png" , "img/projects/project1/img4.png"]'>
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project__item" data-aos="fade-up" data-aos-delay="200">
+                <img src="./img/projects/img2.png" alt="project Item" class="project__item-img">
+                <div class="project__item-overlay">
+                    <span class="project__item-category" data-i18n="project-name-2">Nflbetclash</span>
+                    <div class="project__item-links">
+                        <a href="https://nflbetclash.com/" class="project__item-link" target="_blank">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <a class="project__item-link" data-bs-toggle="modal" data-bs-target="#projectModal"
+                            data-images='["img/projects/project2/img1.png", "img/projects/project2/img2.png" , "img/projects/project2/img3.png"]'>
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project__item" data-aos="fade-up" data-aos-delay="300">
+                <img src="./img/projects/img3.png" alt="project Item" class="project__item-img">
+                <div class="project__item-overlay">
+                    <span class="project__item-category" data-i18n="project-name-3">Wagerwire</span>
+                    <div class="project__item-links">
+                        <a href="https://www.wagerwire.net/" class="project__item-link" target="_blank">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <a class="project__item-link" data-bs-toggle="modal" data-bs-target="#projectModal"
+                            data-images='["img/projects/project3/img1.png", "img/projects/project3/img2.png" , "img/projects/project3/img3.png" , "img/projects/project3/img4.png"]'>
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project__item" data-aos="fade-up" data-aos-delay="100">
+                <img src="./img/projects/img4.png" alt="project Item" class="project__item-img">
+                <div class="project__item-overlay">
+                    <span class="project__item-category" data-i18n="project-name-4">Bet247</span>
+                    <div class="project__item-links">
+                        <a href="https://bet247.com.mx/" class="project__item-link" target="_blank">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <a class="project__item-link" data-bs-toggle="modal" data-bs-target="#projectModal"
+                            data-images='["img/projects/project4/img1.png", "img/projects/project4/img2.png" , "img/projects/project4/img3.png" , "img/projects/project4/img4.png" , "img/projects/project4/img5.png"]'>
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project__item" data-aos="fade-up" data-aos-delay="200">
+                <img src="./img/projects/img5.png" alt="project Item" class="project__item-img">
+                <div class="project__item-overlay">
+                    <span class="project__item-category" data-i18n="project-name-5">Travel</span>
+                    <div class="project__item-links">
+                        <a href="https://jasonporras.github.io/hotels/" class="project__item-link" target="_blank">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <a class="project__item-link" data-bs-toggle="modal" data-bs-target="#projectModal"
+                            data-images='["img/projects/project5/img1.png", "img/projects/project5/img2.png" , "img/projects/project5/img3.png" , "img/projects/project5/img4.png" , "img/projects/project5/img5.png" , "img/projects/project5/img6.png" , "img/projects/project5/img7.png"]'>
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project__item" data-aos="fade-up" data-aos-delay="300">
+                <img src="./img/projects/img6.png"
+                    alt="project Item" class="project__item-img">
+                <div class="project__item-overlay">
+                    <span class="project__item-category" data-i18n="project-name-5">Tossandgo</span>
+                    <div class="project__item-links">
+                        <a href="https://www.tossandgo.live/" class="project__item-link" target="_blank">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <a class="project__item-link" data-bs-toggle="modal" data-bs-target="#projectModal"
+                            data-images='["img/projects/project6/img1.png", "img/projects/project6/img2.png" , "img/projects/project6/img3.png" , "img/projects/project6/img4.png" , "img/projects/project6/img5.png"]'>
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div id="projectCarousel" class="carousel slide">
+                            <div class="carousel-inner"></div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technologies">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="technologies-title">Stack Tecnológico</h2>
+            <hr class="divider">
+            <div class="technologies__marquee" role="group" aria-label="Tech logos" data-aos="fade-left">
+
+                <!-- Lista 1 -->
+                <ul class="technologies__list animate-technologies-marquee" aria-hidden="false">
+                    <li class="technologies__item" aria-label="Vue.js">
+                        <i class="fab fa-vuejs"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Sass">
+                        <i class="fab fa-sass"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Git">
+                        <i class="fab fa-git-alt"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Figma">
+                        <i class="fab fa-figma"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="JavaScript">
+                        <i class="fab fa-js"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="WordPress">
+                        <i class="fab fa-wordpress"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="AngularJS">
+                        <i class="fab fa-angular"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="HTML5">
+                        <i class="fab fa-html5"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="CSS3">
+                        <i class="fab fa-css3-alt"></i>
+                    </li>
+                </ul>
+
+                <!-- Lista 2 -->
+                <ul class="technologies__list animate-technologies-marquee" aria-hidden="true">
+                    <li class="technologies__item" aria-label="Vue.js">
+                        <i class="fab fa-vuejs"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Sass">
+                        <i class="fab fa-sass"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Git">
+                        <i class="fab fa-git-alt"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Figma">
+                        <i class="fab fa-figma"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="JavaScript">
+                        <i class="fab fa-js"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="WordPress">
+                        <i class="fab fa-wordpress"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="AngularJS">
+                        <i class="fab fa-angular"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="HTML5">
+                        <i class="fab fa-html5"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="CSS3">
+                        <i class="fab fa-css3-alt"></i>
+                    </li>
+                </ul>
+
+                <!-- Lista 3 -->
+                <ul class="technologies__list animate-technologies-marquee" aria-hidden="true">
+                    <li class="technologies__item" aria-label="Vue.js">
+                        <i class="fab fa-vuejs"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Sass">
+                        <i class="fab fa-sass"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Git">
+                        <i class="fab fa-git-alt"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="Figma">
+                        <i class="fab fa-figma"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="JavaScript">
+                        <i class="fab fa-js"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="WordPress">
+                        <i class="fab fa-wordpress"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="AngularJS">
+                        <i class="fab fa-angular"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="HTML5">
+                        <i class="fab fa-html5"></i>
+                    </li>
+                    <li class="technologies__item" aria-label="CSS3">
+                        <i class="fab fa-css3-alt"></i>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title mt-0" data-i18n="contact-title">¡Contáctame!</h2>
+            <hr class="divider">
+            <p class="text-muted mb-5" data-i18n="contact-description">¡Listo para comenzar en próximos
+                proyectos! ¡Envíame un mensaje y te responderé lo antes posible!</p>
+            <form class="contact__form" data-aos="fade-left" id="contact-form"
+                action="https://formsubmit.co/porrasartaviajason@gmail.com" method="POST" autocomplete="on">
+
+                <div class="form__group">
+                    <label for="username">Nombre Completo</label>
+                    <input type="text" class="form__input" id="username" name="username" placeholder="Nombre Completo"
+                        required data-i18n-placeholder="contact-name" autocomplete="name">
+                </div>
+
+                <div class="form__group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" class="form__input" id="email" name="email" placeholder="Correo Electrónico"
+                        required data-i18n-placeholder="contact-email-input" autocomplete="email">
+                </div>
+
+                <div class="form__group">
+                    <label for="message">Mensaje</label>
+                    <textarea class="form__input form__textarea" id="message" name="message" placeholder="Mensaje"
+                        required data-i18n-placeholder="contact-message" autocomplete="off"></textarea>
+                </div>
+
+                <div class="form__btn">
+                    <button type="submit" class="btn btn-primary" data-i18n="contact-btn">Enviar Mensaje</button>
+                </div>
+
+                <!-- Config FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/pages/thanks.html">
+                <input type="hidden" name="_template" value="table">
+            </form>
+
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <h2 class="footer__logo">Jason Porras</h2>
+            <p class="footer__text" data-i18n="footer-text">Transformando ideas en experiencias digitales excepcionales.
+            </p>
+
+            <div class="footer__social">
+                </a>
+                <a href="https://www.linkedin.com/in/jason-porras-artavia-b625302b3/" class="footer__social-link"
+                    target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/JasonPorras" class="footer__social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <p class="footer__copyright" data-i18n="footer-copyright">© <span id="year"></span>. Todos los derechos
+                reservados.</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./js/i18n.js"></script>
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>
