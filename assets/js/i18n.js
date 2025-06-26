@@ -33,7 +33,7 @@ const translations = {
         "project-name-3": "Wagerwire",
         "project-name-4": "Bet247",
         "project-name-5": "Travel",
-        "project-name-6": "Tossandgo",
+        "project-name-6": "Kingsbet8",
 
         // tecnologías
         "technologies-title": "Stack Tecnológico",
@@ -94,7 +94,7 @@ const translations = {
         "project-name-3": "Wagerwire",
         "project-name-4": "Bet247",
         "project-name-5": "Travel",
-        "project-name-6": "Tossandgo",
+        "project-name-6": "Kingsbet8",
 
         // technologies
         "technologies-title": "Technology Stack",
